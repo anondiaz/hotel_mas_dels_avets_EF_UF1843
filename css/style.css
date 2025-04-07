@@ -1,4 +1,4 @@
-/* Traemos las fuentes de nuestro servidor */
+/* Traemos las fuentes de nuestro servidor usaremos Marcellus y Roboto */
 
 @font-face {
     font-family: "Marcellus";
@@ -20,7 +20,7 @@
     font-display: swap;
 }
 
-/* Establecemos unos minimos para poder gestionar los elementos*/
+/* Establecemos unos minimos para poder gestionar posteriormente los elementos más cómodamente*/
 * {
     margin: 0;
     padding: 0;
@@ -42,6 +42,7 @@
   border: 2px solid black;
 } */
 
+/* Establecemos valores a los titulos, fuente, tamaño y ubicación*/
 h1,
 h2 {
     font-family: Marcellus, Arial, Helvetica, sans-serif;
@@ -59,56 +60,66 @@ h2 {
 
 /* Definimos el menú de navegación */
 nav {
-    /* Color de fondo, posición y anclaje del menú */
+    /* Color de fondo */
     background-color: var(--primary_color);
-    /* Ancho del menú y altura */
+    /* Ancho del menú */
     div {
         max-width: var(--width_xl);
         margin: 0 auto;
-        height: 4rem;
         /* Establecemos la disposición de las entradas del menú */
         ul {
-            padding: 1rem 0.5rem;
             display: flex;
             justify-content: space-around;
         }
     }
-    /* Estilo de la lista fuera para que no se vea feo*/
+    /* Estilo de la lista fuera para que no se vea feo y los colores y parametros para el hover y el focus*/
     li {
+        padding: 1rem;
         list-style: none;
+        &:hover {
+            background-color: var(--enfasis_color);
+        }
+        :focus {
+            background-color: var(--enfasis_color);
+        }
     }
     a {
-        /* Fuera la decoración de los enlaces, tamaño de letra más grande y color de texto */
+        /* Fuera la decoración de los enlaces, tamaño de letra más grande y color de texto, además del comportamiento para el hover */
         text-decoration: none;
         font-size: 1rem;
         color: var(--text_color);
         &:hover {
             border-bottom: 3px solid var(--text_color);
-            background-color: var(--enfasis_color);
         }
     }
 }
 
-/* Enlace oculto */
+/* Gestión del enlace oculto o skip-link oculto al cargar ... */
 #skip-link {
     position: absolute;
     left: -10000px;
     top: auto;
     overflow: hidden;
 }
-
+/* ... y mostrándolo cuando adquiere el foco */
 #skip-link:focus {
-    position: static;
-    padding: .5rem;
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    padding: 0.8rem;
+    text-decoration:underline;
     background-color: var(--primary_color);
     color: var(--text_color);
     border: 2px solid var(--primary_color);
 }
 
+/* Estructura de la sección de inicio */
 .inicio {
+    /* Ubicación del título */
     h2 {
         text-align: center;
     }
+    /* Tamaño de la sección y ubicación de la imágen */
     div {
         width: var(--width_xl);
         margin: 0 auto;
@@ -119,23 +130,27 @@ nav {
     }
 }
 
+/* Estructura de las secciones siguientes */
 .secciones {
     div {
+        /* Tamaño y comportamiento del contenido global de la sección */
         width: var(--width_xl);
         padding: 10px 0;
         margin: 0 auto;
         display: flex;
         gap: 20px;
         div {
+            /* Comportamiento del contenido de texto de la sección */
             display: flex;
             flex-direction: column;
-            a{
+            a {
                 text-align: right;
             }
         }
         ul {
             padding: 10px;
         }
+        /* Comportamiento de la imágen */
         img {
             margin: 0 auto;
         }
@@ -143,68 +158,77 @@ nav {
     }
 }
 
+/* Eliminamos los estilos de la lista del restaurante */
 .restaurante_seccion {
     li {
         list-style: none;
     }
 }
 
+/* Estructura de la sección de contacto */
 .contactar {
+    /* Color de fondo y del texto */
     background-color: var(--contact_color);
     color: var(--text_color);
+    /* Ubicación del título */
     h2 {
         text-align: center;
+        padding: 5px;
     }
+    /* Vamos a ordenar el formulario */
     form {
+        /* Ancho y comportamiento de los contenedores principales */
         width: var(--width_xl);
         padding: 10px 0;
         display: flex;
         justify-content: space-around;
         margin: 0 auto;
-
+        /* A ver si alineamos el enlace de Volver al inicio */
         div {
             div {
-                a{
+                text-align: right;
+                padding: 0.8rem;
+                a {
                     font-size: 1rem;
                     color: var(--text_color);
-                    padding: 0.5rem;
-                    text-align: right;
-                    
                 }
             }
         } 
+        /* Tamaño del boton, colores y margenes */
         button {
-            width: 20rem;
+            width: 24rem;
             height: 2rem;
             margin: 0.5rem;
             color: var(--text_color);
             background-color: var(--primary_color);
         }
-    }
-    fieldset{
-        height: 280px;
-        label {
-            display: block;
-            padding: 0.5rem;
-        }
-        input {
-            margin: 0.5rem;
-            padding: 0.5rem;
-            width: 380px;
-            height: 2rem;
-        }
-        div {
-            display: flex;
-            align-items: center;
-            padding: 5px;
+        /* Estructura de los fieldset, tamaño y organización de los elementos del formulario */
+        fieldset{
+            height: 280px;
+            legend{
+                padding-left: 0.5rem;
+            }
+            label {
+                display: block;
+                padding: 0.5rem;
+            }
             input {
                 margin: 0.5rem;
-                padding: 0.5rem;
-                width: 1rem;
-                height: 1rem;
+                width: 380px;
+                height: 2rem;
+            }
+            /* Se me hace raro un formulario de contacto que solo puedas reservar */
+            div {
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                input {
+                    margin: 0.5rem;
+                    width: 1rem;
+                    height: 1rem;
+                }
             }
         }
-
     }
 }
 
@@ -255,15 +279,7 @@ footer {
     
 }
 
-
-
-
-
-
-
-
-
-/* Esto debe quedar casi al final */
+/* Esta clase nos permite ocultar los textos que utilizará el lector de contenido, pero necesarios */
 .text_hidden {
     display:none;
 }

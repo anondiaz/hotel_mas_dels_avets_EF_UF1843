@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- Establecemos las meta correspondientes y los enlaces a los ficheros css, js y favicon, además del título -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Andres Diaz for bewsystems by anondiaz" />
@@ -12,23 +13,26 @@
     <script defer src="js/script.js"></script>
 </head>
 <body>
+<!-- Montamos el menú -->
     <nav>
+<!-- Añadimos el skip link al contenido -->
+        <a href="#habitaciones" id="skip-link">Ir al contenido</a>
         <div>
-            <a href="#inicio" id="skip-link">Saltar al contenido principal</a>
             <ul>
+                <!-- El menu con sus aria label para ser más descriptivo -->
                 <li><a href="#inicio" aria-label="Accede a nuestra página de inicio">Inicio</a></li>
-                <li><a href="#habitaciones" aria-label="Mira como son nuestras habitaciones">Habitaciones</a></li>
-                <li><a href="#restaurante" aria-label="Mira como es nuestro restaurante">Restaurante</a></li>
+                <li><a href="#habitaciones" aria-label="Comprueba como son nuestras habitaciones">Habitaciones</a></li>
+                <li><a href="#restaurante" aria-label="Comprueba como es nuestro restaurante">Restaurante</a></li>
                 <li><a href="#contactar" aria-label="Contacta con nosotros">Contacto</a></li>
             </ul>
         </div>
     </nav>
     <main>
-        <!-- La seccion d einicio con la foto del hotel y la descripción sobre el mismo -->
+<!-- La seccion de inicio con la foto del hotel y la descripción sobre el mismo -->
         <section class="inicio">
             <h1 tabindex="0" id="inicio">Hotel Mas dels Avets</h1>
             <div>
-                <img tabindex="0" src="img/hotel.avif" alt="Espectacular vista de las montañas y del valle" aria-labelledby="nuestrohotel">
+                <img tabindex="0" src="img/hotel.avif" alt="Espectacular vista nocturna del Hotel" aria-labelledby="nuestrohotel">
                 <p class="text_hidden" id="nuestrohotel">El hotel Mas dels Avets se encuentra enclavado entre montañas y bosques. Disponemos de todos los servicios, incluida piscina.</p>
             </div>
         </section>
@@ -48,12 +52,11 @@
                             <li tabindex="0">Aire Acondicionado.</li>
                             <li tabindex="0">Caja de seguridad.</li>
                         </ul>
-                        <a href="#inicio">Volver al inicio &#8593;</a>
-                    
+                        <a href="#inicio">Volver al inicio</a>
                 </div>
             </div>
         </section>
-        <!-- La sección del restaurante con foto y descripción del mismo, además de los servicios que se ofrecen -->
+<!-- La sección del restaurante con foto y descripción del mismo, además de los servicios que se ofrecen -->
         <section class="secciones restaurante_seccion">
             <div>
                 <div>
@@ -67,11 +70,11 @@
                         <li tabindex="0">Le recomendamos consulte nuestra excelente carta de vinos.</li>
                         <li tabindex="0">Elaboramos postres artesanos diariamente.</li>
                     </ul>
-                   <a href="#inicio">Volver al inicio &#8593;</a>
+                   <a href="#inicio">Volver al inicio</a>
                 </div>
             </div>
         </section> 
-        <!-- La seccion de contactar incluytendo la posibilidad de solicitar una reserva a traves de un formulario -->
+<!-- La sección de contactar incluyendo la posibilidad de solicitar una reserva a traves de un formulario -->
         <section class="contactar">
             <h2 tabindex="0" id="contactar">Contacte con nosotros</h2>
             <form>
@@ -87,35 +90,36 @@
                     </fieldset>
                     <button class="boton">Enviar</button>
                 </div>
+<!-- Esto de que se haga una reserva automáticamente habría que solucionarlo -->
                 <div>
                     <fieldset>
                         <legend>Datos de la reserva</legend>
                         <label for="entrada">Fecha de entrada:* </label>
-                        <input type="date" name="entrada" id="entrada" required aria-required="true" required aria-labelledby="fechaentrada" />
+                        <input type="date" name="entrada" id="entrada" required aria-required="true" aria-labelledby="fechaentrada" />
                         <p class="text_hidden" id="fechaentrada">Selecciona la fecha de entrada.</p>
-                        <p id="errorEntrada"></p>
                         <label for="salida">Fecha de salida:* </label>
-                        <input type="date" name="salida" id="salida" required aria-required="true" required aria-labelledby="fechasalida" />
+                        <input type="date" name="salida" id="salida" required aria-required="true" aria-labelledby="fechasalida" />
                         <p class="text_hidden" id="fechasalida">Selecciona la fecha de salida.</p>
-                        <p id="errorSalida"></p>
-                        <p class="text_hidden" id="seleccionatipoestancia">Selecciona el tipo de estancia.</p>
                         <div>
-                            <input type="radio" name="estancia" value="alojamiento" id="alojamiento" checked aria-labelledby="seleccionatipoestancia"/>
+                            <input type="radio" name="estancia" value="alojamiento" id="alojamiento" checked aria-labelledby="alojamientoseleccionado"/>
                             <label for="alojamiento"> Solo alojamiento </label>
-                            <p class="text_hidden" id="seleccionatipoestancia">Selecciona el tipo de estancia.</p>
+                            <p class="text_hidden" id="alojamientoseleccionado">Seleccionado solo alojamiento.</p>
                         </div>
                         <div>
-                            <input type="radio" name="estancia" value="desayuno" id ="desayuno" />
+                            <input type="radio" name="estancia" value="desayuno" id ="desayuno" aria-labelledby="desyunoseleccionado" />
                             <label for="desayuno"> Desayuno incluido </label>
+                            <p class="text_hidden" id="desyunoseleccionado">Seleccionado solo alojamiento.</p>
                         </div>
                     </fieldset>
-                    <div><a href="#inicio">Volver al inicio &#8593;</a></div>
+                    <div>
+                        <a href="#inicio">Volver al inicio</a>
+                    </div>
                     
                 </div>
             </form>
         </section>
     </main>
-    <!-- El footer con los enlaces a redes sociales, a descarga de la app, etc.. -->
+<!-- El footer con los enlaces a redes sociales, a descarga de la app, etc.. -->
     <footer>
         <div class="pie_pagina">
             <div class="enlaces">
@@ -151,6 +155,5 @@
             </div>
         </div>
     </footer>
-    
 </body>
 </html>
