@@ -1,0 +1,269 @@
+/* Traemos las fuentes de nuestro servidor */
+
+@font-face {
+    font-family: "Marcellus";
+    src: url("../fonts/Marcellus-Regular.woff2") format("woff2"),
+        url("../fonts/Marcellus-Regular.woff") format("woff"),
+        url("../fonts/Marcellus-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.woff2") format("woff2"),
+        url("../fonts/Roboto-Regular.woff") format("woff"),
+        url("../fonts/Roboto-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Establecemos unos minimos para poder gestionar los elementos*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+/* Definimos unos colores que nos permitan combinar para mejorar la accesibilidad, también definimos el ancho de página */
+:root {
+    --width_xl: 1000px;
+    --primary_color: #006400;
+    --text_color: white;
+    --enfasis_color: #7D8007;
+    --contact_color: #545454;
+}
+
+/* Ayuda a definir estructura y distribución de los elementos, comentar cuando ya no sea necesario */
+/* div {
+  border: 2px solid black;
+} */
+
+h1,
+h2 {
+    font-family: Marcellus, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+
+/* Definimos el menú de navegación */
+nav {
+    /* Color de fondo, posición y anclaje del menú */
+    background-color: var(--primary_color);
+    /* Ancho del menú y altura */
+    div {
+        max-width: var(--width_xl);
+        margin: 0 auto;
+        height: 4rem;
+        /* Establecemos la disposición de las entradas del menú */
+        ul {
+            padding: 1rem 0.5rem;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    /* Estilo de la lista fuera para que no se vea feo*/
+    li {
+        list-style: none;
+    }
+    a {
+        /* Fuera la decoración de los enlaces, tamaño de letra más grande y color de texto */
+        text-decoration: none;
+        font-size: 1rem;
+        color: var(--text_color);
+        &:hover {
+            border-bottom: 3px solid var(--text_color);
+            background-color: var(--enfasis_color);
+        }
+    }
+}
+
+/* Enlace oculto */
+#skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    overflow: hidden;
+}
+
+#skip-link:focus {
+    position: static;
+    padding: .5rem;
+    background-color: var(--primary_color);
+    color: var(--text_color);
+    border: 2px solid var(--primary_color);
+}
+
+.inicio {
+    h2 {
+        text-align: center;
+    }
+    div {
+        width: var(--width_xl);
+        margin: 0 auto;
+        img {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.secciones {
+    div {
+        width: var(--width_xl);
+        padding: 10px 0;
+        margin: 0 auto;
+        display: flex;
+        gap: 20px;
+        div {
+            display: flex;
+            flex-direction: column;
+            a{
+                text-align: right;
+            }
+        }
+        ul {
+            padding: 10px;
+        }
+        img {
+            margin: 0 auto;
+        }
+
+    }
+}
+
+.restaurante_seccion {
+    li {
+        list-style: none;
+    }
+}
+
+.contactar {
+    background-color: var(--contact_color);
+    color: var(--text_color);
+    h2 {
+        text-align: center;
+    }
+    form {
+        width: var(--width_xl);
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+
+        div {
+            div {
+                a{
+                    font-size: 1rem;
+                    color: var(--text_color);
+                    padding: 0.5rem;
+                    text-align: right;
+                    
+                }
+            }
+        } 
+        button {
+            width: 20rem;
+            height: 2rem;
+            margin: 0.5rem;
+            color: var(--text_color);
+            background-color: var(--primary_color);
+        }
+    }
+    fieldset{
+        height: 280px;
+        label {
+            display: block;
+            padding: 0.5rem;
+        }
+        input {
+            margin: 0.5rem;
+            padding: 0.5rem;
+            width: 380px;
+            height: 2rem;
+        }
+        div {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            input {
+                margin: 0.5rem;
+                padding: 0.5rem;
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+
+    }
+}
+
+/* Vamos a definir el pie de página */
+footer {
+    /* Color de fondo, ancho y distribución de elementos, establecemos una clase para facilitarnos las cosas */
+    background-color: var(--primary_color);
+    .pie_pagina {
+        margin: 0 auto;
+        max-width: var(--width_xl);
+        display: flex;
+        justify-content: space-between;
+    }
+    /* Tamaño de los h2 */
+    h2 {
+        padding: 0.5rem;
+        font-size: 1.25rem;
+        color: var(--text_color);
+    }
+    /* Estilo y distribución de las listas, quitando los puntos */
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    li {
+        /* Damos margenes para que sea más legible */
+        padding: 0.5rem;
+    }
+    a {
+        /* Quitamos la decoración de los enlaces, establecemos el tamño y el color */
+        text-decoration: none;
+        font-size: 1rem;
+        color: var(--text_color);
+    }
+    /* tamaños para los iconos de Android, Apple y RRSS */
+    .apps {
+        img {
+            width: 125px;
+        }
+    }
+    .links_rrss {
+        img {
+            width: 25px;
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+/* Esto debe quedar casi al final */
+.text_hidden {
+    display:none;
+}

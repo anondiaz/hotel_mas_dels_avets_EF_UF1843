@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Andres Diaz for bewsystems by anondiaz" />
+    <meta name="description" content="La mejor ubicación para tu escapada rural" />
+    <meta name="keywords" content="Paseos por la montaña, Ruta rural" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <title>Hotel Mas dels Avets</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="#inicio" id="skip-link">Saltar al contenido principal</a>
+            <ul>
+                <li><a href="#inicio" aria-label="Accede a nuestra página de inicio">Inicio</a></li>
+                <li><a href="#habitaciones" aria-label="Mira como son nuestras habitaciones">Habitaciones</a></li>
+                <li><a href="#restaurante" aria-label="Mira como es nuestro restaurante">Restaurante</a></li>
+                <li><a href="#contactar" aria-label="Contacta con nosotros">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="inicio">
+            <h1 tabindex="0" id="inicio">Hotel Mas dels Avets</h1>
+            <div>
+                <img tabindex="0" src="img/hotel.avif" alt="Espectacular vista de las montañas y del valle" aria-labelledby="nuestrohotel">
+                <p class="text_hidden" id="nuestrohotel">El hotel Mas dels Avets se encuentra enclavado entre montañas y bosques. Disponemos de todos los servicios, incluida piscina.</p>
+            </div>
+        </section>
+        <section class="secciones">
+            
+            <div>
+                <div>
+                    <img tabindex="0" src="img/dormitori.avif" alt="Foto de los dormitorios" aria-labelledby="nuestrashabitaciones"/>
+                    <p class="text_hidden" id="nuestrashabitaciones">Nuestros dormitorios son extremadamente confortables y están perfectamente equipados.</p>
+                </div>
+                <div>
+                        <h2 tabindex="0" id="habitaciones">Nuestras habitaciones</h2>
+                        <p tabindex="0">Todas nuestras habitaciones disponen de:</p>
+                        <ul>
+                            <li tabindex="0">Baño privado.</li>
+                            <li tabindex="0">TV conectada a satélite.</li>
+                            <li tabindex="0">Aire Acondicionado.</li>
+                            <li tabindex="0">Caja de seguridad.</li>
+                        </ul>
+                        <a href="#inicio">Volver al inicio &#8593;</a>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="secciones restaurante_seccion">
+            <div>
+                <div>
+                    <img tabindex="0" src="img/menjador.avif" alt="Foto de la sala del restaurante" aria-labelledby="nuestrorestaurante"/>
+                    <p class="text_hidden" id="nuestrorestaurante">Sala principal del restaurante, con capacidad para muchos comensales.</p>
+                </div>
+                <div>
+                    <h2 tabindex="0" id="restaurante">El Restaurante</h2>
+                    <ul>
+                        <li tabindex="0">Ofrecemos menús diarios con productos de temporada.</li>
+                        <li tabindex="0">Le recomendamos consulte nuestra excelente carta de vinos.</li>
+                        <li tabindex="0">Elaboramos postres artesanos diariamente.</li>
+                    </ul>
+                   <a href="#inicio">Volver al inicio &#8593;</a>
+                </div>
+            </div>
+        </section> 
+        <section class="contactar">
+            <h2 tabindex="0" id="contactar">Contacte con nosotros</h2>
+            <form>
+                <div>
+                    <fieldset>
+                        <legend>Datos personales</legend>
+                        <label for="nombre">Nombre:* </label>
+                        <input type="text" required aria-required="true" id="nombre" pattern="[A-Za-z\sàáèéìíòóùúÀÁÈÉÌÍÒÓÙÙçÇñÑ\-]{2,}"/>
+                        <p id="errorNombre"></p>
+                        <label for="apellidos">Apellidos:* </label
+                        ><input type="text" required aria-required="true" id="apellidos" pattern="[A-Za-z\sàáèéìíòóùúÀÁÈÉÌÍÒÓÙÙçÇñÑ\-]{2,}" />
+                        <p id="errorApellidos"></p>
+                    </fieldset>
+                    <button class="boton">Enviar</button>
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>Datos de la reserva</legend>
+                        <label for="entrada">Fecha de entrada:* </label>
+                        <input type="date" name="entrada" id="entrada" required aria-required="true" required aria-labelledby="fechaentrada" />
+                        <p class="text_hidden" id="fechaentrada">Selecciona la fecha de entrada.</p>
+                        <p id="errorEntrada"></p>
+                        <label for="salida">Fecha de salida:* </label>
+                        <input type="date" name="salida" id="salida" required aria-required="true" required aria-labelledby="fechasalida" />
+                        <p class="text_hidden" id="fechasalida">Selecciona la fecha de salida.</p>
+                        <p id="errorSalida"></p>
+                        <p class="text_hidden" id="seleccionatipoestancia">Selecciona el tipo de estancia.</p>
+                        <div>
+                            <input type="radio" name="estancia" value="alojamiento" id="alojamiento" checked aria-labelledby="seleccionatipoestancia"/>
+                            <label for="alojamiento"> Solo alojamiento </label>
+                            <p class="text_hidden" id="seleccionatipoestancia">Selecciona el tipo de estancia.</p>
+                        </div>
+                        <div>
+                            <input type="radio" name="estancia" value="desayuno" id ="desayuno" />
+                            <label for="desayuno"> Desayuno incluido </label>
+                        </div>
+                    </fieldset>
+                    <div><a href="#inicio">Volver al inicio &#8593;</a></div>
+                    
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="pie_pagina">
+            <div class="enlaces">
+                <h2>
+                Sobre nosotros
+                </h2>
+                <ul>
+                    <li><a href="#" aria-label="Conoce quienes somos">¿Quiénes somos?</a></li>
+                    <li><a href="./contactar.html" aria-label="Contacta con nosotros">Contactar</a></li>
+                    <li><a href="https://blog.hotelesrurales.es" aria-label="Accede a nuestro blog">Blog hoteles Rurales</a></li>
+                    <li><a href="#" aria-label="Accede a nuestras condiciones legales">Condiciones legales</a></li>
+                    <li><a href="#" aria-label="Accede a nuestra politica de cookies">Politica de cookies</a></li>
+                </ul>   
+            </div>
+            <div class="apps">
+                <h2>
+                Descargate la app
+                </h2>
+                <ul>
+                    <li><a href="https://play.google.com/store/apps/" aria-label="Descargar la aplicación en Google Play"><img src="img/google-play2.avif" alt="Descargar la aplicación en Google Play"></a></li>
+                    <li><a href="https://www.apple.com/es/app-store/" aria-label="Descargar la aplicación en la Apple Store"><img src="img/apple-store2.avif" alt="Descargar la aplicación en la Apple Store"></a></li>
+                </ul>   
+            </div>
+            <div class="links_rrss">
+                <h2>
+                Síguenos
+                </h2>
+                <ul>
+                    <li><a href="https://facebook.com" aria-label="Accede a nuestro sitio en Facebook"><img src="img/png-transparent-facebook.avif" alt="">Facebook</a></li>
+                    <li><a href="https://x.com" aria-label="Accede a nuestro canal en X"><img src="img/png-transparent-twitter.avif" alt="">Twitter</a></li>
+                    <li><a href="https://instagram.com" aria-label="Accede a nuestro sitio en Instagram"><img src="img/png-transparent-instagram.avif" alt="">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
